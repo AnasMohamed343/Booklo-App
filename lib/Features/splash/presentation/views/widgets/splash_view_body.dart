@@ -1,11 +1,13 @@
 import 'package:booklo/Features/home/presentation/views/HomeView.dart';
 import 'package:booklo/Features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:booklo/constants.dart';
+import 'package:booklo/core/utils/app_router.dart';
 import 'package:booklo/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -49,7 +51,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
+            SvgPicture.asset(
               AssetsData.logo,
               fit: BoxFit.fitWidth,
               height: 70,
@@ -84,9 +86,10 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => HomeView(),
-          transition: Transition.fadeIn, duration: kTransitionDuration);
+    Future.delayed(const Duration(seconds: 4), () {
+      // Get.to(() => HomeView(),
+      //     transition: Transition.fadeIn, duration: kTransitionDuration);
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }
