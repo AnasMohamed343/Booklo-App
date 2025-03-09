@@ -5,5 +5,5 @@ import 'package:dartz/dartz.dart';
 abstract class HomeRepo {
   //بحدد الفيتشر دي هتعمل ايه  لكن مبحددش هنا هتعملو ازاي
   Future<Either<Failure, List<BookModel>>> fetchFeaturedBooks();
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewestBooks();
 }
