@@ -28,7 +28,8 @@ class VolumeInfo {
 
   VolumeInfo.fromJson(dynamic json) {
     title = json['title'];
-    authors = json['authors'] != null ? json['authors'].cast<String>() : [];
+    authors = (json['authors'] as List<dynamic>?)?.cast<
+        String>(); //json['authors'] != null ? json['authors'].cast<String>() : [];
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
     description = json['description'];
