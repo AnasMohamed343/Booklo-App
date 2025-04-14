@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'Features/home/presentation/view_models/featured_books_cubit.dart';
 
 void main() {
+  setup();
   runApp(const BookLoApp());
 }
 
