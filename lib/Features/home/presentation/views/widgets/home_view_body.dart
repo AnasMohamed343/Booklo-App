@@ -1,5 +1,4 @@
 import 'package:booklo/Features/home/presentation/views/widgets/bestseller_listview.dart';
-import 'package:booklo/Features/home/presentation/views/widgets/bestseller_listview_item.dart';
 import 'package:booklo/Features/home/presentation/views/widgets/custom_app_bar.dart';
 import 'package:booklo/Features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:booklo/core/utils/styles.dart';
@@ -12,7 +11,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return const CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
             child: Column(
@@ -22,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
             FeaturedBooksListView(),
             SizedBox(height: 20),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: EdgeInsets.symmetric(horizontal: 30),
               child: Text('Best Seller',
                   style: Styles
                       .textStyle18 //.copyWith(fontWeight: FontWeight.w500,),
@@ -31,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(height: 18),
           ],
         )),
-        const SliverFillRemaining(
+        SliverFillRemaining(
           child: BestSellerListView(),
         ),
       ],
